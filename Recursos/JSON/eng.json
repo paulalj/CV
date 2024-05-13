@@ -1,0 +1,102 @@
+{
+    "nav":[
+      {
+        "sobremi": "About me",
+        "formacad": "Academic Training",
+        "coneixements": "Hard Skills",
+        "explab": "Work Experience",
+        "portfoli": "Portfolio",
+        "contacte": "Contact"
+      }
+    ],
+    "estudis":[
+      {
+        "h2": "Academic Training",
+        "h3_grau": "Audiovisuals Systems Engineering",
+        "h4_grau": "2023",
+        "uni": "Universitat Pompeu Fabra",
+        "ciutat": "Barcelona",
+        "h3_batx": "Coding Bootcamp - IA & Python",
+        "h4_batx": "2024",
+        "insti": "Fundesplai",
+        "ciutat_insti": "Barcelona"
+      }
+    ],
+    "coneixements":[
+      {
+        "h2": "Hard Skills",
+        "cmm": "C++",
+        "chash": "C#",
+        "css": "CSS",
+        "html": "HTML",
+        "js": "JavaScript",
+        "python": "Python",
+        "matlab": "Matlab",
+        "java": "Java",
+        "sql": "SQL",
+        "h3_dp": "Deep Learning",
+        "unity": "Unity"
+      }
+    ],
+    "exp_lab":[
+      {
+        "h2": "Work Experience",
+        "h3_steam": "Teacher of STEAM Activities",
+        "h4_steam": "IGNITE SERIOUS PLAY S.L.",
+        "h4_steam_dates": "January 2022 - February 2022",
+        "funcions_steam": "Functions:",
+        "func1_steam": "Facilitation of learning and personal development",
+        "func2_steam": "Planification of the lessons",
+        "func3_steam": "Communication and collaboration with parents/tutors",
+        "h3_tv3": "Technician in the Central and Traffic department",
+        "h4_tv3": "CCMA (Corporació Catalana de Mitjans Audiovisuals)",
+        "h4_tv3_dates": "February 2022 - June 2024",
+        "funcions_tv3": "Functions:",
+        "func1_tv3": "Management and distribution of entry and exit signals",
+        "func2_tv3": "Management of satelites signals",
+        "func3_tv3": "Reception of SRT/RTMP signals",
+        "func4_tv3": "Signals' treatment"
+      }
+    ],
+    "portfoli":[
+      {
+        "h2": "Portfolio",
+        "tfg": "Final year project",
+        "kafka": "Personal project of a minigame, in process",
+        "calc": "Iphone's calculator",
+        "buscaP": "Find the word"
+      }
+    ],
+    "aptituds":[
+      {
+        "h2": "About me",
+        "apt1": "With outstanding skills in planning and organization, along with a strong capacity for empathy, I demonstrate a team-oriented approach and analytical thinking to address complex challenges. My ability to work collaboratively, combined with my willingness to learn quickly, allows me to adapt swiftly to new environments and contribute effectively across various projects and contexts."
+      }
+    ],
+    "idiomes":[
+      {
+        "h2": "Languages",
+        "cat_tit": "Catalan: ",
+        "cat": "Native, C1 level certificate",
+        "cast_tit": "Spanish: ",
+        "cast": "Native",
+        "eng_tit":"English: ",
+        "eng": "Intermediate level"
+      }
+    ],
+    "formulari":[
+      {
+        "h2": "Contact",
+        "nom":"Name & last name",
+        "mail":"Email",
+        "assumpte":"Subject",
+        "missatge":"Message",
+        "enviar":"Send"
+      }
+    ],
+    "cv":[
+      {
+        "cv_pdf":"Download the CV"
+      }
+    ]
+  }

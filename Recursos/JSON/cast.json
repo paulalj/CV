@@ -1,0 +1,102 @@
+{
+    "nav":[
+      {
+        "sobremi": "Sobre mi",
+        "formacad": "Formación académica",
+        "coneixements": "Hard Skills",
+        "explab": "Experiencia laboral",
+        "portfoli": "Portfolio",
+        "contacte": "Contacto"
+      }
+    ],
+    "estudis":[
+      {
+        "h2": "Formación académica",
+        "h3_grau": "Grado en Ingeniería en Sistemas Audiovisuales",
+        "h4_grau": "2016-2023",
+        "uni": "Universitat Pompeu Fabra",
+        "ciutat": "Barcelona",
+        "h3_batx": "Coding Bootcamp - IA y Python",
+        "h4_batx": "2024",
+        "insti": "Fundesplai",
+        "ciutat_insti": "Barcelona"
+      }
+    ],
+    "coneixements":[
+      {
+        "h2": "Hard Skills",
+        "cmm": "C++",
+        "chash": "C#",
+        "css": "CSS",
+        "html": "HTML",
+        "js": "JavaScript",
+        "python": "Python",
+        "matlab": "Matlab",
+        "java": "Java",
+        "sql": "SQL",
+        "h3_dp": "Deep Learning",
+        "unity": "Unity"
+      }
+    ],
+    "exp_lab":[
+      {
+        "h2": "Experiencia laboral",
+        "h3_steam": "Profesora de actividades STEAM",
+        "h4_steam": "IGNITE SERIOUS PLAY S.L.",
+        "h4_steam_dates": "Enero 2022 - Febrero 2022",
+        "funcions_steam": "Funciones:",
+        "func1_steam": "Facilitación del aprendizaje y desarrollo personal",
+        "func2_steam": "Planificación de las clases",
+        "func3_steam": "Comunicación y colaboración con los padres/tutores",
+        "h3_tv3": "Técnica de Control Central y Tráfico",
+        "h4_tv3": "CCMA (Corporació Catalana de Mitjans Audiovisuals)",
+        "h4_tv3_dates": "Febrero 2022 - Junio 2024",
+        "funcions_tv3": "Funciones:",
+        "func1_tv3": "Gestión y distribución de las señales de entrada y salida",
+        "func2_tv3": "Gestión de señales satelite",
+        "func3_tv3": "Recepción y envío de señales SRT/RTMP",
+        "func4_tv3": "Tratamiento de señales"
+      }
+    ],
+    "portfoli":[
+      {
+        "h2": "Portfolio",
+        "tfg": "Trabajo de final de carrera",
+        "kafka": "Proyecto personal de minijuego, en proceso",
+        "calc": "Calculadora del Iphone",
+        "buscaP": "Busca Palabras"
+      }
+    ],
+    "aptituds":[
+      {
+        "h2": "Sobre mí",
+        "apt1": "Con habilidades destacadas en planificación y organización, junto con una sólida capacidad de empatía, demuestro un enfoque centrado en el equipo y un pensamiento analítico para abordar desafíos complejos. Mi capacidad para trabajar en equipo, combinada con mi disposición para aprender rápidamente, me permite adaptarme ágilmente a nuevos entornos y contribuir de manera efectiva en diversos proyectos y contextos."
+      }
+    ],
+    "idiomes":[
+      {
+        "h2": "Idiomas",
+        "cat_tit": "Catalán: ",
+        "cat": "Nativo, Certificado nivell C1",
+        "cast_tit": "Castellano: ",
+        "cast": "Nativo",
+        "eng_tit": "Inglés: ",
+        "eng": "Nivel intermedio"
+      }
+    ],
+    "formulari":[
+      {
+        "h2": "Contacto",
+        "nom":"Nombre y apellidos",
+        "mail":"Email",
+        "assumpte":"Asunto",
+        "missatge":"Mensaje",
+        "enviar":"Enviar"
+      }
+    ],
+    "cv":[
+      {
+        "cv_pdf":"Descarga el CV"
+      }
+    ]
+  }

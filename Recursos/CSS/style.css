@@ -1,0 +1,1214 @@
+/*Importem les dos fonts que utilitzarem, la primera és la del meu nom i la segona la que s'utilitza per tota la web*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/*Inicialitzem la pàgina sense cap estil ni marge ni res i a part posem la ateixa lletra*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/*Guardem els colors com a variables*/
+:root {
+    /*Varibales auxiliars que utilitzaré*/
+    --color_clar: #F0DBDB;
+    --color_fosc: #DBA39A;
+    --cartes: #FEFCF3;
+    --fons: white;
+    --lletra: black;
+
+    /*Variables pel mode nit*/
+    --color_clar_nit: #7E6363;
+    --color_fosc_nit: #503C3C;
+    --cartes_nit: #A87C7C;
+    --fons_nit: #3E3232;
+    --lletra_nit: white;
+
+    /*Variables mode dia*/
+    --color_clar_dia: #F0DBDB;
+    --color_fosc_dia: #DBA39A;
+    --cartes_dia: #FEFCF3;
+    --fons_dia: white;
+    --lletra_dia: black;
+}
+
+/*Apliquem un color de fons al body*/
+body {
+    background-color: var(--fons);
+}
+
+/*Deixem el div del CV ocult fins que es trii l'idioma*/
+#cv {
+    display: block;
+}
+
+/*Div del header*/
+#mode_nit {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*Canviem la lletra del títol*/
+#mode_nit p {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+
+/*Div de la primera bandera per apartar-la del títol amb marges*/
+#band_cat {
+    margin-left: 300px;
+}
+
+/*Div del botó del mode dia/nit per apartar-lo del títol amb marges*/
+#boto_lluna_sol {
+    margin-right: 300px;
+}
+
+/*Apliquem marge als botons de header*/
+#mode_nit button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* Imatge dels botons del header */
+#mode_nit button img {
+    width: 80%;
+    border-radius: 50%;
+    border: 3px solid var(--color_clar);
+}
+
+/*Afegim un marc quan passem per sobre*/
+#mode_nit button img:hover {
+    background-color: var(--color_fosc);
+    border: 3px solid var(--color_fosc);
+}
+
+/*Afegim color de fons, marges, marc i centrem els elements*/
+header {
+    height: 15vh;
+    background-color: var(--color_clar);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    border: 1px solid var(--color_clar);
+}
+
+/*Fa referència a tots els botons de la pàgina*/
+button {
+    border: none;
+    background: none;
+    width: 50px;
+}
+
+/*Fem que la imatge ocupi tot el botó*/
+button img {
+    width: 100%;
+    height: auto;
+}
+
+/*Li apliquem l'estil desitjat al navegador i el fem que estigui sempre a pantalla*/
+nav {
+    background-color: var(--color_fosc);
+    width: 100%;
+    height: 8vh;
+
+    margin-bottom: 5px;
+
+    position: sticky;
+    top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+}
+
+/*Centrem els elements de dintre del navegador*/
+nav div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*Afegim padding i posem de color blanc el text del navegador*/
+nav a {
+    padding: 5px 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--lletra);
+}
+
+/*Canviem el color de fons i del text del navegador quan passem amb el cursor per sobre*/
+nav a:hover {
+    background-color: var(--color_clar);
+    color: var(--lletra);
+}
+
+/*Afegim un marge de 10 tant al principi (#esq) com al final (#dreta) del navegador*/
+#esq {
+    margin-left: 10px;
+}
+
+#dreta {
+    margin-right: 10px;
+}
+
+/* Ocultem la icona del menú per defecte */
+#menuIcono {
+    display: none;
+}
+
+/*Definim les mides i amrges de la icona del menú*/
+#menuIcono img {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+/*Fem que el cos (la part on està el contingut del currículum) tingui comportament flex*/
+#cos {
+    display: flex;
+}
+
+/*Decidim el fons i les mides del main*/
+main {
+    background-color: var(--color_clar);
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 75%;
+    height: 260vh;
+}
+
+/*Decidim el fons i les mides del aside i també el fem amb comportament flex*/
+aside {
+    background-color: var(--color_clar);
+    width: 25%;
+    height: 260;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/*Canviem la mida dels títols h2 de l'aside*/
+aside h2 {
+    font-size: 20px;
+}
+
+/*Definim l'alçada de la part de dalt de l'aside i li apliquem comportament flex*/
+#adalt {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*Aquest és el div on està la imatge i la informació de contacte. Definim les característiques del div*/
+#img {
+    height: 33%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Definim la mida de la imatge i la fem rodona*/
+#img img {
+    width: 75%;
+    border-radius: 100%;
+}
+
+/*Definim comportament i posició del telèfon*/
+#tlf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    margin-top: 30px;
+}
+
+/*Definim mida de la imatge del telèfon*/
+#tlf img {
+    margin-right: 10px;
+    width: 8%;
+    border-radius: 0%;
+}
+
+/*Definim comportament i posició del mail*/
+#mail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+/*Definim mida de la imatge del mail*/
+#mail img {
+    margin-right: 10px;
+    width: 6%;
+    border-radius: 0%;
+}
+
+/*Definim comportament i posició de les xarxes socials*/
+#xxss {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Definim mida de l'enllaç de les xxss*/
+#xxss a {
+    width: 33%;
+    height: 100%;
+}
+
+/*Definim el comportament de l'enllaç a Linkedin*/
+#linkedin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Afegim un marc quan passem per sobre*/
+#linkedin img:hover {
+    border: 3px solid var(--cartes);
+}
+
+/*Definim el comportament de l'enllaç a InfoJobs*/
+#infojobs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Afegim un marc quan passem per sobre*/
+#infojobs img:hover {
+    border: 3px solid var(--cartes);
+}
+
+/*Definim comportament i posició del pdf*/
+#cv_pdf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border: 3px solid var(--color_fosc);
+    background-color: var(--color_fosc);
+    border-radius: 30px;
+}
+
+/*Afegim un marc quan passem per sobre*/
+#cv_pdf:hover {
+    border: 3px solid var(--cartes);
+}
+
+/*Definim mida de la imatge del pdf*/
+#cv_pdf img {
+    margin-right: 10px;
+    width: 10%;
+}
+
+/*Canviem el color de la lletra a negre*/
+#cv_pdf p {
+    color: black;
+}
+
+/*Definim el comportament de l'enllaç a Github*/
+#github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Afegim un marc quan passem per sobre*/
+#github img:hover {
+    border: 3px solid var(--cartes);
+}
+
+/*Definim la mida de les imatges de les xarxes socials*/
+#xxss img {
+    width: 45%;
+    margin: 5px;
+}
+
+/*Definim les característiques de la classe carta*/
+.carta {
+    background-color: var(--cartes);
+    width: 95%;
+    height: 90%;
+    border: 1px solid var(--cartes);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+}
+
+/*Amaguem el contingut de l'apartat aptituds i idiomes fins que es passi el ratolí per sobre*/
+#text_aptituds,
+#text_idiomes {
+    display: none;
+}
+
+/*Justifiquem el text*/
+#apt1 {
+    text-align: justify;
+}
+
+/*Afegim marges al bloc de text*/
+#text_aptituds p {
+    margin: 20px;
+    margin-bottom: 50px;
+}
+
+/*Classe per les imatges de les aptituds*/
+.SoftSkills {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/*Retoquem les imatges de les aptituds*/
+.SoftSkills img {
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--color_fosc);
+}
+
+/*Canviem la mida del text*/
+.SoftSkills p {
+    font-size: 10px;
+}
+
+/*Definim les propietats de la classe*/
+.soft_skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+/*Definim la mida del text*/
+.soft_skills p{
+    font-size: 15px;
+}
+
+/*Animació que fa aparèixer els objectes d'abaix cap a dalt*/
+/*És una classe que està aplicada directament al text que volem que aparegui*/
+.animacio_adalt {
+    -webkit-animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/*Definim la mida i el comportament del div aptituds*/
+#aptituds {
+    width: 100%;
+    height: 45%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Afegim marge i centrem el títol*/
+#aptituds h2 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/*Definim la mida i el comportament del div idiomes*/
+#idiomes {
+    width: 100%;
+    height: 18%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Afegim marge i centrem el títol*/
+#idiomes h2 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/*Treiem l'estil de la llista i afegim marge*/
+#idiomes ul {
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+/*Afegim padding als components de la llista*/
+#idiomes li {
+    padding-left: 15px;
+}
+
+/*Definim el color de fons, les mides i el comportament del footer*/
+footer {
+    background-color: var(--color_fosc);
+    width: 100%;
+    height: 20%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Afegim marge al paràgraf del footer*/
+footer p {
+    margin-top: 5px;
+}
+
+/*Apliquem el comportament desitjat al div del formulari i el copyright*/
+#form_copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 93%;
+    height: 100%;
+    margin-left: 70px;
+}
+
+/*Canviem el color de la lletra del placeholder del formulari*/
+::placeholder {
+    color: var(--lletra);
+}
+
+/*Afegim comportament i dimensions al div de l'easter egg*/
+#EasterEgg {
+    width: 7%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 200px;
+}
+
+/*Fem que el botó ocupi tota l'amplada del div*/
+#EasterEgg button {
+    width: 100%;
+}
+
+/*Definim el fons, marge, padding, marc als divs on anirà la info del main*/
+#estudis,
+#coneixements,
+#exp_laboral,
+#portfoli {
+    border: 1px solid var(--cartes);
+    margin: 10px;
+    padding: 15px;
+    background-color: var(--cartes);
+    border-radius: 30px;
+}
+
+/*Canviem el títol a negreta i subratllat*/
+#estudis h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Canviem aquest títol a negreta*/
+#estudis h3 {
+    font-weight: bold;
+}
+
+/*Canviem aquest títol a subratllat*/
+#estudis h4 {
+    text-decoration: underline;
+}
+
+/*Canviem el comportament del div dels estudis*/
+#uni_batxi {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*Afegim les propietats de la classe*/
+.clase_est {
+    width: 50%;
+    background-color: var(--color_clar);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    padding-left: 50px;
+}
+
+/*Afegim marge i padding i posem un cercle buit als elements de la llista*/
+#coneixements li {
+    margin-left: 15px;
+    padding-left: 5px;
+    padding-top: 5px;
+    list-style-type: circle;
+}
+
+/*Canviem el títol a negreta i subratllat*/
+#coneixements h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Canviem aquest títol a negreta*/
+#coneixements h3 {
+    font-weight: bold;
+}
+
+/*Afegim padding al títol*/
+#coneixements h3 {
+    padding-bottom: 2px;
+}
+
+/*Canviem el comportament dels elements del div*/
+#hard_skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Canviem la disposició dels elements*/
+#hs_adalt,
+#hs_abaix {
+    display: flex;
+    flex-direction: row;
+}
+
+#cmm,
+#chash,
+#css,
+#html,
+#js,
+#python,
+#sql,
+#matlab,
+#java,
+#h3_dp,
+#unity,
+#ss1,
+#ss2,
+#ss3,
+#ss4,
+#ss5 {
+    display: none;
+}
+
+/*Definim les propietats de la classe*/
+.hard_skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color_clar);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+/*Afegim espai entre el títol i la imatge*/
+.hard_skills p {
+    margin-bottom: 10px;
+}
+
+/*Definim totes les imatges de la mateixa mida*/
+.hard_skills img {
+    width: 50px;
+}
+
+/*Afegim marge i padding i posem un cercle buit als elements de la llista*/
+#exp_laboral li {
+    margin-left: 15px;
+    padding-left: 5px;
+    padding-top: 5px;
+    list-style-type: circle;
+}
+
+/*Canviem el títol a negreta i subratllat*/
+#exp_laboral h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Canviem aquest títol a negreta i afegim marge abaix*/
+#exp_laboral h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*Canviem aquest títol a subratllat*/
+#exp_laboral h4 {
+    text-decoration: underline;
+}
+
+/*Afegim padding als títols*/
+#exp_laboral h3,
+h4 {
+    padding-bottom: 2px;
+}
+
+/*Afegim marge per dalt*/
+#exp_laboral p {
+    margin-top: 10px;
+}
+
+/*Canviem el comportament del div*/
+#feines {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*Definim les característiques de la classe*/
+.classe_feines {
+    width: 50%;
+    background-color: var(--color_clar);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    padding-left: 50px;
+}
+
+/*Canviem el títol a negreta i subratllat*/
+#portfoli h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Div dintre de portfoli on estan els treballs que he fet, aquí definimel comportament en columna*/
+#treballs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Mides de la imatge*/
+#instafamous_link img {
+    margin-top: 5px;
+    width: 100%;
+}
+
+/*Apareix un marc quan es passa per sobre*/
+#instafamous_link img:hover {
+    border: 5px solid var(--color_fosc);
+}
+
+/*Mides de la imatge*/
+#kafka_link img {
+    margin-top: 5px;
+    width: 100%;
+}
+
+/*Apareix un marc quan es passa per sobre*/
+#kafka_link img:hover {
+    border: 5px solid var(--color_fosc);
+}
+
+/*Mides de la imatge*/
+#calc_link img {
+    margin-top: 5px;
+    height: 50%;
+}
+
+/*Apareix un marc quan es passa per sobre*/
+#calc_link img:hover {
+    border: 5px solid var(--color_fosc);
+}
+
+/*Mides de la imatge*/
+#buscaP_link img {
+    margin-top: 5px;
+    height: 50%;
+}
+
+/*Apareix un marc quan es passa per sobre*/
+#buscaP_link img:hover {
+    border: 5px solid var(--color_fosc);
+}
+
+/*Estil del formulari*/
+input,
+textarea {
+    border: 1px solid var(--cartes);
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: var(--cartes);
+}
+
+/*Marges i lletra que apareix en cada camp del formulari*/
+#nom,
+#email,
+#assumpte,
+#missatge {
+    margin-top: 10px;
+    font-family: "Open Sans", sans-serif;
+}
+
+/*Format del botó d'enviar*/
+input[type="submit"] {
+    font-size: 110%;
+    font-weight: 100;
+    background: var(--color_fosc);
+    border-color: var(--color_fosc);
+    color: var(--lletra);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/*Canvi de color del botó d'enviar quan passes per sobre*/
+input[type="submit"]:hover {
+    background: var(--cartes);
+    border-color: var(--cartes);
+    color: var(--lletra);
+}
+
+/*Mida i disseny del div del formulari*/
+#formulari {
+    width: 600px;
+    background: var(--color_clar);
+    padding: 15px;
+    border: 1px solid var(--color_clar);
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    font-size: 80%;
+    font-family: "Open Sans", sans-serif;
+}
+
+/*CARROUSSEL*/
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: var(--cartes);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--color_fosc) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color_fosc) !important;
+}
+
+
+/*ADAPTATIVE*/
+
+/*Tablet*/
+@media screen and (max-width: 768px) {
+
+    #esq,
+    #dreta {
+        display: none;
+        /* Ocultem elements del menú en pantalles petites */
+    }
+
+    #menuIcono {
+        display: block;
+        /* Mostrem la icona del menú en pantalles petites */
+    }
+
+    /*Canviem el color de fons dels apartats del navegador*/
+    nav a {
+        background-color: var(--color_fosc);
+    }
+
+    /*Canviem els marges*/
+    #band_cat {
+        margin-left: 100px;
+    }
+
+    /*Canviem els marges*/
+    #boto_lluna_sol {
+        margin-right: 100px;
+    }
+
+    /*Canviem la mida de la lletra del títol*/
+    #mode_nit p {
+        font-size: 35px;
+    }
+
+    /*Canviem la mida de la imatge dels botons*/
+    #mode_nit button img {
+        width: 70%;
+    }
+
+    /*Canviem la llargada del main*/
+    main {
+        height: 310vh;
+    }
+
+    /*Canviem la llargada del aside*/
+    aside {
+        height: 310vh;
+    }
+
+    /*Definim les característiques de la classe carta*/
+    .carta {
+        width: 95%;
+        height: 90%;
+    }
+
+    /*Canviem la llargada del div*/
+    #aptituds {
+        height: 55%;
+    }
+
+    /*Canviem el marge*/
+    #text_aptituds p {
+        margin: 10px;
+        margin-bottom: 5px;
+    }
+
+    /*Canviem la mida de les imatges de les aptituds*/
+    .SoftSkills img {
+        width: 40px;
+    }
+
+    /*Afegim padding als components de la llista*/
+    #aptituds li {
+        padding-left: 10px;
+    }
+
+    /*Afegim padding als components de la llista*/
+    #idiomes li {
+        padding-left: 15px;
+    }
+
+    /*Definim mida de la imatge del mail*/
+    #mail img {
+        margin-right: 3px;
+    }
+
+    /*Redefinim totes les imatges de la mateixa mida*/
+    .hard_skills img {
+        width: 40px;
+    }
+
+    /*Canviem la mida del div*/
+    #img {
+        height: 25%;
+    }
+
+    /*Redefinim la mida del div idiomes*/
+    #idiomes {
+        height: 250px;
+    }
+
+    /*Afegim padding al text dels idiomes*/
+    #text_idiomes {
+        padding-left: 15px;
+    }
+}
+
+/*Mòbil*/
+@media screen and (max-width: 480px) {
+
+    #esq,
+    #dreta {
+        display: none;
+        /* Ocultem elements del menú en pantalles petites */
+    }
+
+    #menuIcono {
+        display: block;
+        /* Mostrem la icona del menú en pantalles petites */
+    }
+
+    /*Canviem els marges*/
+    #band_cat {
+        margin-left: 20px;
+    }
+
+    /*Canviem els marges*/
+    #boto_lluna_sol {
+        margin-right: 20px;
+    }
+
+    /*Canviem la mida de la imatge dels botons*/
+    #mode_nit button img {
+        width: 50%;
+    }
+
+    /*Canviem la mida de la lletra del títol*/
+    #mode_nit p {
+        font-size: 26px;
+    }
+
+    /*Canviem els marges als botons de header*/
+    #mode_nit button {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    /*Canviem el comprotament del cos de row a column-reverse perquè primer aparegui l'aside*/
+    #cos {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    /*Canviem l'amplitud, l'alçada i els marges de l'aside*/
+    aside {
+        width: 100%;
+        height: 280vh;
+        margin: 2px;
+    }
+
+    /*Canviem la mida de les imatges de les aptituds*/
+    .SoftSkills img {
+        width: 60px;
+    }
+
+    /*Canviem l'amplitud, l'alçada i els marges del main*/
+    main {
+        margin: 2px;
+        width: 100%;
+        height: 295vh;
+    }
+
+    /*Canviem el comportament dels objectes de dintre i l'alçada*/
+    #adalt {
+        height: 100%;
+        justify-content: center;
+    }
+
+    /* Redefinim la mida del div*/
+    #img {
+        margin-top: 10px;
+        height: 700px;
+    }
+
+    /*Redefinim la mida de la imatge*/
+    #img img {
+        width: 70%;
+    }
+
+    /* Canviem la mida del text */
+    #tlf p {
+        font-size: 20px;
+    }
+
+    /*Redefinim mida de la imatge del telèfon*/
+    #tlf img {
+        margin-right: 10px;
+        width: 11%;
+    }
+
+    /* Canviem la mida del text */
+    #mail p {
+        font-size: 20px;
+    }
+
+    /*Redefinim mida de la imatge del mail*/
+    #mail img {
+        margin-right: 10px;
+        width: 9%;
+    }
+
+    /*Definim mida de la imatge del pdf*/
+    #cv_pdf img {
+        margin-right: 10px;
+        width: 7%;
+    }
+
+    /*Redefinim la mida de les imatges de les xarxes socials*/
+    #xxss img {
+        width: 30%;
+        margin: 5px;
+    }
+
+    /*Redefinim la mida del div aptituds*/
+    #aptituds {
+        height: 500px;
+    }
+
+    /*Canviem la mida i el marge del títol*/
+    #aptituds h2 {
+        margin-bottom: 3px;
+        font-size: 30px;
+    }
+
+    /* Canviem el marge */
+    #aptituds ul {
+        margin-top: 8px;
+    }
+
+    /*Canviem la mida de la lletra del text*/
+    #aptituds li {
+        font-size: 20px;
+    }
+
+    /*Redefinim la mida del div idiomes*/
+    #idiomes {
+        height: 290px;
+    }
+
+    /*Canviem la mida i el marge del títol*/
+    #idiomes h2 {
+        margin-bottom: 3px;
+        font-size: 30px;
+    }
+
+    /* Canviem el marge */
+    #idiomes ul {
+        margin-top: 8px;
+    }
+
+    /*Canviem la mida de la lletra del text*/
+    #idiomes li {
+        font-size: 20px;
+    }
+
+    /*Canviem el comportament del footer*/
+    footer {
+        flex-direction: column;
+    }
+
+    /*Canviem el marge esquerre*/
+    #form_copy {
+        margin-left: 15px;
+        height: 85%;
+    }
+
+    /*Canviem l'amplada del div del formulari*/
+    #formulari {
+        width: 400px;
+    }
+
+    /*Canviem dimesions i treiem marges al div de l'easter egg*/
+    #EasterEgg {
+        width: 100%;
+        height: 15%;
+        margin: 0;
+        justify-content: end;
+    }
+
+    /*Canviem dimensions del botó*/
+    #EasterEgg button {
+        width: 25%;
+    }
+
+    /*Canviem el padding*/
+    .clase_est {
+        padding-left: 15px;
+    }
+
+    /*Canviem el padding*/
+    .classe_feines {
+        padding-left: 15px;
+    }
+
+    /*Redefinim totes les imatges de la mateixa mida*/
+    .hard_skills img {
+        width: 20px;
+    }
+}
+
+
+/*ANIMACIONS*/
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-4-1 11:13:57
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-ver-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-in-ver-bottom {
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-ver-bottom {
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+}

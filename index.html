@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi CV Web</title>
+    <meta name="description" content="CV">
+    <meta name="keywords" content="CV, WebCV">
+    <meta name="autor" content="Paula">
+    <link rel="icon" href="./Recursos/Imatges/resume.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="./Recursos/CSS/style.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header id="header">
+        <!-- Imatge per canviar entre el mode dia i el mode nit -->
+        <div id="mode_nit">
+            <div id="boto_lluna_sol">
+                <button onclick="mode_nit()">
+                    <div id="dianitImatge"></div>
+                    <img id="img_mdn" src="./Recursos/Imatges/moon.png" alt="Mode nit">
+                </button>
+            </div>
+
+            <p>Paula Liñán Jurado</p>
+
+            <!-- Tres botons pels tres idiomes -->
+            <div id="band_cat">
+                <button id="but_cat" onclick="CV_cat()">
+                    <img src="./Recursos/Imatges/flag.png" alt="Català">
+                </button>
+            </div>
+            <button id="but_cast" onclick="CV_cast()">
+                <img src="/Recursos/Imatges/spain.png" alt="Castellano">
+            </button>
+            <button id="but_eng" onclick="CV_eng()">
+                <img src="./Recursos/Imatges/united-kingdom.png" alt="English">
+            </button>
+        </div>
+    </header>
+    <!-- Aquest és el div del CV -->
+    <div id="cv">
+        <nav>
+            <!-- Aquesta és la part que hi ha a l'esquerra de la barra del navegador -->
+            <div id="esq">
+                <a href="#adalt" id="sobremi"></a>
+                <a href="#estudis" id="formacad"></a>
+                <a href="#exp_laboral" id="explab"></a>
+                <a href="#coneixements" id="coneix"></a>
+                <a href="#portfoli" id="portf"></a>
+            </div>
+            <!-- Aquesta és la part que hi ha a la dreta de la barra del navegador -->
+            <div id="dreta">
+                <a href="#formulari" id="contact"></a>
+            </div>
+            <!-- Botó per desplegar el menú-->
+            <button id="menuIcono">
+                <img src="./Recursos/Imatges/list.png" alt="Menu">
+            </button>
+        </nav>
+        <div id="cos">
+            <!-- Dintre del main tenim els diferents camps que formen el meu currículum cadascun en un div diferent -->
+            <main>
+                <div id="estudis">
+                    <h2 id="h2_formacad"></h2>
+                    <div id="uni_batxi">
+                        <div class="clase_est">
+                            <h3 id="h3_grau"></h3>
+                            <h4 id="h4_grau"></h4>
+                            <p id="uni"></p>
+                            <p id="ciutat"></p>
+                        </div>
+                        <div class="clase_est">
+                            <h3 id="h3_batx"></h3>
+                            <h4 id="h4_batx"></h4>
+                            <p id="insti"></p>
+                            <p id="ciutat_insti"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="exp_laboral">
+                    <h2 id="h2_explab"></h2>
+                    <div id="feines">
+                        <div class="classe_feines">
+                            <h3 id="h3_tv3"></h3>
+                            <h4 id="h4_tv3"></h4>
+                            <h4 id="h4_tv3_dates"></h4>
+                            <p id="funcions_tv3"></p>
+                            <ul>
+                                <li id="func1_tv3"></li>
+                                <li id="func2_tv3"></li>
+                                <li id="func3_tv3"></li>
+                                <li id="func4_tv3"></li>
+                            </ul>
+                        </div>
+                        <div class="classe_feines">
+                            <h3 id="h3_steam"></h3>
+                            <h4 id="h4_steam"></h4>
+                            <h4 id="h4_steam_dates"></h4>
+                            <p id="funcions_steam"></p>
+                            <ul>
+                                <li id="func1_steam"></li>
+                                <li id="func2_steam"></li>
+                                <li id="func3_steam"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="coneixements">
+                    <h2 id="h2_coneix"></h2>
+                    <div id="hard_skills">
+                        <div id="hs_adalt">
+                            <div class="hard_skills" onmouseenter="apareix_nom_cmm()" onmouseleave="desapareix_nom()">
+                                <p id="cmm"></p>
+                                <img src="./Recursos/Imatges/cmm.png" alt="C++">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_chash()" onmouseleave="desapareix_nom()">
+                                <p id="chash"></p>
+                                <img src="./Recursos/Imatges/c-sharp.png" alt="C#">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_css()" onmouseleave="desapareix_nom()">
+                                <p id="css"></p>
+                                <img src="./Recursos/Imatges/css.png" alt="CSS">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_html()" onmouseleave="desapareix_nom()">
+                                <p id="html"></p>
+                                <img src="./Recursos/Imatges/html.png" alt="HTML">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_js()" onmouseleave="desapareix_nom()">
+                                <p id="js"></p>
+                                <img src="./Recursos/Imatges/java-script.png" alt="JavaScript">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_pyt()" onmouseleave="desapareix_nom()">
+                                <p id="python"></p>
+                                <img src="./Recursos/Imatges/python.png" alt="Python">
+                            </div>
+                        </div>
+                        <div id="hs_abaix">
+                            <div class="hard_skills" onmouseenter="apareix_nom_sql()" onmouseleave="desapareix_nom()">
+                                <p id="sql"></p>
+                                <img src="./Recursos/Imatges/sql-server.png" alt="SQL">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_mat()" onmouseleave="desapareix_nom()">
+                                <p id="matlab"></p>
+                                <img src="./Recursos/Imatges/matlab.png" alt="Matlab">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_java()" onmouseleave="desapareix_nom()">
+                                <p id="java"></p>
+                                <img src="./Recursos/Imatges/java.png" alt="Java">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_dp()" onmouseleave="desapareix_nom()">
+                                <p id="h3_dp"></p>
+                                <img src="./Recursos/Imatges/deep-learning.png" alt="Deep Learning">
+                            </div>
+                            <div class="hard_skills" onmouseenter="apareix_nom_unit()" onmouseleave="desapareix_nom()">
+                                <p id="unity"></p>
+                                <img src="./Recursos/Imatges/unity.png" alt="Unity">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="portfoli">
+                    <h2 id="h2_portfoli"></h2>
+                    <div id="treballs">
+                        <!-- CARROUSSEL -->
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <p id="tfg"></p>
+                                    <a id="instafamous_link" href="https://pastanaga.itch.io/instafamous"
+                                        target="_blank"><img src="/Recursos/Imatges/InstaFamous.png"
+                                            alt="InstaFamous"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <p id="kafka"></p>
+                                    <a id="kafka_link" href="https://github.com/paulalj/Kafka.git" target="_blank"><img
+                                            src="/Recursos/Imatges/kafka_c.png" alt="Kafka"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <p id="calc"></p>
+                                    <a id="calc_link" href="https://github.com/paulalj/Calculadora-Iphone.git"
+                                        target="_blank"><img src="/Recursos/Imatges/calculadora.png"
+                                            alt="Calculadora"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <p id="buscaP"></p>
+                                    <a id="buscaP_link" href="https://github.com/paulalj/Busca-Palabras.git"
+                                        target="_blank"><img src="/Recursos/Imatges/BuscaPalabras.png"
+                                            alt="Calculadora"></a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- A l'aside he posat la informació personal -->
+            <aside>
+                <div id="adalt">
+                    <!-- Dintre del div "img" està la informació de contacte, junt amb la meva foto -->
+                    <div id="img">
+                        <img src="/Recursos/Imatges/IMG-7539.jpg" alt="Foto meva">
+                        <div id="tlf">
+                            <img src="/Recursos/Imatges/telephone.png" alt="telf">
+                            <p>601 23 85 05</p>
+                        </div>
+                        <div id="mail">
+                            <img src="/Recursos/Imatges/correo-electronico.png" alt="mail">
+                            <p>paulalj1997@gmail.com</p>
+                        </div>
+                        <a id="cv_pdf" href="./Recursos/PDF/CV_PaulaLiñanJurado.pdf" download>
+                            <img src="/Recursos/Imatges/download-circular-button.png" alt="CV_PDF">
+                            <p id="down_pdf"></p>
+                        </a>
+                        <div id="xxss">
+                            <a id="linkedin" href="https://www.linkedin.com/in/paula-li%C3%B1%C3%A1n-jurado-3119a6223/"
+                                target="_blank"><img src="/Recursos/Imatges/linkedin.png" alt="linkedin_link"></a>
+                            <a id="infojobs" href="https://www.infojobs.net/candidate/cv/view/index.xhtml"
+                                target="_blank"><img src="/Recursos/Imatges/ij-logo_reduced.png"
+                                    alt="infojobs_link"></a>
+                            <a id="github" href="https://github.com/paulalj" target="_blank"><img
+                                    src="/Recursos/Imatges/github.png" alt="github_link"></a>
+                        </div>
+                    </div>
+                    <div id="aptituds">
+                        <div class="carta">
+                            <h2 id="h2_apt"></h2>
+                            <div class="animacio_adalt" id="text_aptituds">
+                                <p id="apt1"></p>
+                                <div class="SoftSkills">
+                                    <div class="soft_skills" onmouseenter="apareix_nom_ss1()"
+                                        onmouseleave="desapareix_nom()">
+                                        <img src="./Recursos/Imatges/planificacion.png" alt="Planning">
+                                        <p id="ss1">Planning</p>
+                                    </div>
+                                    <div class="soft_skills" onmouseenter="apareix_nom_ss2()"
+                                        onmouseleave="desapareix_nom()">
+                                        <img src="./Recursos/Imatges/empathy.png" alt="Empathy">
+                                        <p id="ss2">Empathy</p>
+                                    </div>
+                                    <div class="soft_skills" onmouseenter="apareix_nom_ss3()"
+                                        onmouseleave="desapareix_nom()">
+                                        <img src="./Recursos/Imatges/analitico.png" alt="Analytical">
+                                        <p id="ss3">Analytical</p>
+                                    </div>
+                                </div>
+                                <div class="SoftSkills">
+                                    <div class="soft_skills" onmouseenter="apareix_nom_ss4()"
+                                        onmouseleave="desapareix_nom()">
+                                        <img src="./Recursos/Imatges/teamwork.png" alt="Team work">
+                                        <p id="ss4">Team work</p>
+                                    </div>
+                                    <div class="soft_skills" onmouseenter="apareix_nom_ss5()"
+                                        onmouseleave="desapareix_nom()">
+                                        <img src="./Recursos/Imatges/learning.png" alt="Learning">
+                                        <p id="ss5">Learning</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="idiomes">
+                        <div class="carta">
+                            <h2 id="h2_idi"></h2>
+                            <ul class="animacio_adalt" id="text_idiomes">
+                                <span id="cat_tit"></span>
+                                <li id="cat_idi"></li>
+                                <span id="cast_tit"></span>
+                                <li id="cast_idi"></li>
+                                <span id="eng_tit"></span>
+                                <li id="eng_idi"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- En el footer he posat el formulari de contacte i el símbol de copyright, en un div i en un altre div el Easter Egg -->
+        <footer>
+            <div id="form_copy">
+                <div id="formulari">
+                    <h2 id="h2_form"></h2>
+                    <input type="text" id="nom" name="nom" onblur="validarNom()">
+                    <div id="errorNom" class="error"></div>
+                    <input type="text" id="email" name="email" onblur="validarMail()">
+                    <div id="errorMail" class="error"></div>
+                    <input type="text" id="assumpte" name="assumpte" onblur="validarAssumpte()">
+                    <div id="errorAssum" class="error"></div>
+                    <textarea id="missatge" name="missatge" rows="4" onblur="validarMissatge()"></textarea>
+                    <div id="errorMissatge" class="error"></div>
+
+                    <input id="submit" type="submit" class="submit_dark">
+                </div>
+
+                <p id="data"></p>
+                <p><small>&copy; by Paula</small></p>
+            </div>
+
+            <div id="EasterEgg">
+                <button id="EasterEggButton" onclick="EasterEgg()">
+                    <div id="EasterEggImatge"></div>
+                    <img id="EasterEggImatgeInicial" src="./Recursos/Imatges/Ou_0.PNG" alt="EasterEgg_img">
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./Recursos/JS/idiomes.js"></script>
+    <script src="./Recursos/JS/script.js"></script>
+</body>
+
+</html>
